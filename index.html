@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programme de workout personnalisé pour perdre 4 kilos par mois">
+    <meta name="theme-color" content="#4CAF50">
+    <title>Programme Fitness - PFL2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+</head>
+<body>
+    <header>
+        <h1>💪 Mon Programme Fitness</h1>
+        <p class="subtitle">Objectif: -4kg par mois | Poids actuel: <span id="current-weight">140</span>kg</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-button active" data-tab="workouts">Programmes</button>
+        <button class="tab-button" data-tab="progress">Progression</button>
+        <button class="tab-button" data-tab="about">À propos</button>
+    </nav>
+
+    <main>
+        <!-- Workouts Tab -->
+        <section id="workouts" class="tab-content active">
+            <div class="workout-list">
+                <div class="workout-card" data-day="1">
+                    <div class="workout-header">
+                        <h2>🏋️ Jour 1: Haut du Corps</h2>
+                        <span class="duration">45-60 min</span>
+                    </div>
+                    <p class="description">Focus: Poitrine, épaules, bras, dos</p>
+                    <button class="start-workout-btn" data-workout="day1">Commencer</button>
+                </div>
+
+                <div class="workout-card" data-day="2">
+                    <div class="workout-header">
+                        <h2>🦵 Jour 2: Bas du Corps + Cardio</h2>
+                        <span class="duration">45-60 min</span>
+                    </div>
+                    <p class="description">Focus: Jambes, fessiers, vélo</p>
+                    <button class="start-workout-btn" data-workout="day2">Commencer</button>
+                </div>
+
+                <div class="workout-card" data-day="3">
+                    <div class="workout-header">
+                        <h2>🔥 Jour 3: Full Body</h2>
+                        <span class="duration">45-60 min</span>
+                    </div>
+                    <p class="description">Focus: Corps complet + intensité</p>
+                    <button class="start-workout-btn" data-workout="day3">Commencer</button>
+                </div>
+
+                <div class="workout-card weekend">
+                    <div class="workout-header">
+                        <h2>🚶 Weekend: Cardio Léger</h2>
+                        <span class="duration">60 min</span>
+                    </div>
+                    <p class="description">Marche 1h + vélo optionnel</p>
+                    <button class="start-workout-btn" data-workout="weekend">Commencer</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Tab -->
+        <section id="progress" class="tab-content">
+            <div class="progress-container">
+                <h2>📊 Suivi de Progression</h2>
+                
+                <div class="weight-tracker">
+                    <h3>Suivi du Poids</h3>
+                    <div class="weight-input">
+                        <label for="new-weight">Nouveau poids (kg):</label>
+                        <input type="number" id="new-weight" step="0.1" min="50" max="200">
+                        <button id="save-weight-btn">Enregistrer</button>
+                    </div>
+                    <div class="weight-stats">
+                        <div class="stat-card">
+                            <span class="stat-label">Poids actuel</span>
+                            <span class="stat-value" id="weight-current">140 kg</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Perte totale</span>
+                            <span class="stat-value" id="weight-loss">0 kg</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Objectif mensuel</span>
+                            <span class="stat-value">-4 kg/mois</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workout-history">
+                    <h3>Historique des Séances</h3>
+                    <div id="history-list" class="history-list">
+                        <p class="empty-state">Aucune séance enregistrée. Commencez votre premier workout!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Tab -->
+        <section id="about" class="tab-content">
+            <div class="about-container">
+                <h2>À propos du Programme</h2>
+                
+                <div class="info-card">
+                    <h3>🎯 Objectif</h3>
+                    <p>Perdre 4 kilos par mois de manière saine et durable</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>💪 Équipement Disponible</h3>
+                    <ul>
+                        <li>Barre de 30 kg</li>
+                        <li>2 haltères de 15 kg</li>
+                        <li>2 haltères de 10 kg</li>
+                        <li>2 haltères de 5 kg</li>
+                        <li>Vélo d'exercice</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📅 Structure du Programme</h3>
+                    <p><strong>3 séances par semaine</strong> (45-60 min chacune) + marche le weekend (60 min)</p>
+                    <ul>
+                        <li><strong>Jour 1:</strong> Haut du corps (poitrine, épaules, bras, dos)</li>
+                        <li><strong>Jour 2:</strong> Bas du corps + cardio vélo</li>
+                        <li><strong>Jour 3:</strong> Full body + intensité</li>
+                        <li><strong>Weekend:</strong> Marche 1h + vélo optionnel</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>💡 Conseils</h3>
+                    <ul>
+                        <li>Buvez 2-3 litres d'eau par jour</li>
+                        <li>Dormez 7-8 heures par nuit</li>
+                        <li>Mangez des protéines à chaque repas</li>
+                        <li>Créez un déficit calorique de 500-750 kcal/jour</li>
+                        <li>Soyez régulier et patient</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workout Detail View -->
+        <section id="workout-detail" class="workout-detail hidden">
+            <button id="back-btn" class="back-btn">← Retour</button>
+            <h2 id="workout-title"></h2>
+            <div class="timer-container">
+                <div id="exercise-timer" class="timer">
+                    <div class="timer-display">
+                        <span id="timer-minutes">00</span>:<span id="timer-seconds">00</span>
+                    </div>
+                    <div class="timer-controls">
+                        <button id="start-timer-btn">Démarrer</button>
+                        <button id="pause-timer-btn" class="hidden">Pause</button>
+                        <button id="reset-timer-btn">Réinitialiser</button>
+                    </div>
+                </div>
+            </div>
+            <div id="exercise-list" class="exercise-list"></div>
+            <button id="complete-workout-btn" class="complete-btn">✓ Terminer la séance</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Programme Fitness PFL2 - Installable en tant qu'application</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
