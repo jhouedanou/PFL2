@@ -1,82 +1,80 @@
-# PFL2 - Programme Fitness & Nutrition
+# 💪 Programme Fitness PFL2
 
-Une application web progressive (PWA) pour la perte de poids avec un programme d'entraînement personnalisé et un plan nutritionnel.
+Une application web progressive (PWA) pour un programme de workout personnalisé visant à perdre 4 kilos par mois.
 
 ## 🎯 Objectif
 
-- **Perte de poids**: 4 kg par mois
-- **Poids actuel**: 140 kg
-- **Équipement disponible**: 
-  - Barre de 30 kg
-  - Haltères: 2 × 15 kg, 2 × 10 kg, 2 × 5 kg
-  - Vélo stationnaire
-  - Marche (1h le weekend)
+Perdre 4 kilos par mois de manière saine et durable avec un programme d'entraînement adapté.
 
-## 🏋️ Fonctionnalités
+## 💪 Équipement
 
-### Entraînement
-- Programme hebdomadaire complet (7 jours)
-- Séances de 30 minutes à 1 heure
-- Compteur d'exercices (1/12, 2/12, etc.)
-- Pause configurable entre les exercices (par défaut 5 secondes)
-- Mode automatique pour enchaîner les exercices
-- Chronomètre intégré
+- Barre de 30 kg
+- 2 haltères de 15 kg
+- 2 haltères de 10 kg
+- 2 haltères de 5 kg
+- Vélo d'exercice
 
-### Nutrition
-- Plan nutritionnel quotidien
-- 1 repas principal par jour riche en protéines
-- Utilisation des ingrédients disponibles:
-  - Œufs
-  - Poulet
-  - Poisson
-  - Whey
-  - Pain
+## 📅 Programme
 
-## 📱 Installation PWA
+### 3 séances par semaine (45-60 min chacune)
 
-1. Ouvrir le site dans un navigateur mobile
-2. Appuyer sur "Ajouter à l'écran d'accueil"
-3. L'application fonctionnera hors ligne
+- **Jour 1**: Haut du corps (poitrine, épaules, bras, dos)
+- **Jour 2**: Bas du corps + cardio vélo
+- **Jour 3**: Full body + intensité
+- **Weekend**: Marche 1h + vélo optionnel
 
-## 🚀 Utilisation
+## 🚀 Fonctionnalités
 
-1. **Onglet Entraînement**: Sélectionner le jour et démarrer la séance
-2. **Onglet Programme**: Voir le programme hebdomadaire complet
-3. **Onglet Nutrition**: Consulter le plan nutritionnel quotidien
-4. **Onglet Réglages**: Personnaliser les paramètres
+- ✅ 4 programmes d'entraînement détaillés avec exercices
+- ✅ Timer intégré pour chronométrer les séances
+- ✅ Suivi du poids et progression
+- ✅ Historique des séances d'entraînement
+- ✅ Design responsive (mobile et desktop)
+- ✅ PWA installable (fonctionne offline)
+- ✅ Interface en français
 
-### Raccourcis clavier
-- `Espace`: Démarrer/Arrêter l'entraînement
-- `P`: Pause/Reprendre
-- `→`: Exercice suivant
-- `←`: Exercice précédent
+## 💻 Installation
 
-## 📂 Structure du projet
+### Option 1: Utilisation directe
+Ouvrez simplement `index.html` dans votre navigateur web.
 
-```
-PFL2/
-├── index.html      # Page principale
-├── styles.css      # Styles CSS
-├── app.js          # Logique JavaScript
-├── manifest.json   # Manifest PWA
-├── sw.js           # Service Worker
-└── icons/          # Icônes PWA
-```
-
-## 🔧 Développement
-
-Pour lancer le projet en local:
-
+### Option 2: Serveur local
 ```bash
-# Avec Python
-python -m http.server 8000
+# Python 3
+python3 -m http.server 8000
 
-# Avec Node.js
-npx serve .
+# Puis ouvrez http://localhost:8000
 ```
 
-Puis ouvrir `http://localhost:8000` dans le navigateur.
+### Option 3: Installation en tant qu'application
+1. Ouvrez le site dans Chrome/Edge/Safari
+2. Cliquez sur l'icône d'installation dans la barre d'adresse
+3. L'application sera installée comme une app native
+
+## 📱 Utilisation
+
+1. **Programmes**: Consultez les 4 programmes d'entraînement disponibles
+2. **Commencer une séance**: Cliquez sur "Commencer" pour démarrer un workout
+3. **Timer**: Utilisez le timer pour chronométrer votre séance
+4. **Terminer**: Cliquez sur "Terminer la séance" pour enregistrer votre progression
+5. **Suivi**: Consultez l'onglet "Progression" pour suivre votre poids et historique
+
+## 💡 Conseils
+
+- Buvez 2-3 litres d'eau par jour
+- Dormez 7-8 heures par nuit
+- Mangez des protéines à chaque repas
+- Créez un déficit calorique de 500-750 kcal/jour
+- Soyez régulier et patient
+
+## 🛠️ Technologies
+
+- HTML5
+- CSS3 (avec variables CSS et Flexbox/Grid)
+- JavaScript Vanilla (ES6+)
+- Service Worker pour PWA
+- LocalStorage pour la persistance des données
 
 ## 📄 Licence
 
-Ce projet est open source.
+MIT

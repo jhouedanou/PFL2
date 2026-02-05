@@ -1,0 +1,7 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#4CAF50"/>
+  <circle cx="106" cy="256" r="53" fill="white"/>
+  <circle cx="406" cy="256" r="53" fill="white"/>
+  <rect x="159" y="230" width="194" height="52" fill="white"/>
+  <text x="256" y="380" font-size="64" fill="white" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">PFL2</text>
+</svg>
