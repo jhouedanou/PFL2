@@ -1,0 +1,587 @@
+/* PFL2 Fitness App Styles */
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #388E3C;
+    --secondary-color: #2196F3;
+    --accent-color: #FF9800;
+    --danger-color: #f44336;
+    --background: #1a1a2e;
+    --surface: #16213e;
+    --surface-light: #1f3460;
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8b8;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: var(--border-radius);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+/* Tabs Navigation */
+.tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: none;
+    color: var(--text-secondary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    background: var(--surface-light);
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: var(--text-primary);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Workout Section */
+.day-selector {
+    margin-bottom: 20px;
+}
+
+.day-selector label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.day-selector select {
+    width: 100%;
+    padding: 12px;
+    background: var(--surface);
+    border: 2px solid var(--surface-light);
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.day-selector select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Exercise Display */
+.workout-display {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.exercise-counter {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.exercise-card {
+    margin-bottom: 20px;
+}
+
+.exercise-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.exercise-card p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.exercise-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.exercise-details span {
+    background: var(--surface-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Timer Display */
+.timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.pause-indicator {
+    background: var(--accent-color);
+    color: #000;
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Controls */
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 15px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--surface-light);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: var(--secondary-color);
+}
+
+/* Auto Mode Toggle */
+.auto-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--surface-light);
+    transition: var(--transition);
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: var(--transition);
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    height: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: var(--border-radius);
+}
+
+/* Program Section */
+.weekly-program {
+    display: grid;
+    gap: 15px;
+}
+
+.program-day {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.program-day.weekend {
+    border-left-color: var(--accent-color);
+}
+
+.program-day h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.program-day.weekend h3 {
+    color: var(--accent-color);
+}
+
+.workout-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.duration {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.program-day ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.program-day li {
+    padding: 5px 0;
+    color: var(--text-secondary);
+    padding-left: 20px;
+    position: relative;
+}
+
+.program-day li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Nutrition Section */
+.nutrition-info {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--surface);
+    border-radius: var(--border-radius);
+}
+
+.nutrition-plan {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.meal-day {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.meal-day h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.meal h4 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.meal ul {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.meal li {
+    padding: 5px 0;
+    color: var(--text-secondary);
+    padding-left: 20px;
+    position: relative;
+}
+
+.meal li::before {
+    content: "✓";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.calories {
+    background: var(--surface-light);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    display: inline-block;
+}
+
+.whey-reminder {
+    background: linear-gradient(135deg, var(--surface), var(--surface-light));
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+}
+
+.whey-reminder h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* Settings Section */
+.setting-group {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.setting-group input {
+    width: 100%;
+    padding: 12px;
+    background: var(--surface-light);
+    border: 2px solid transparent;
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.setting-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#save-settings {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.equipment-list {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.equipment-list h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.equipment-list ul {
+    list-style: none;
+}
+
+.equipment-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--surface-light);
+    color: var(--text-secondary);
+}
+
+.equipment-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .tabs {
+        flex-wrap: nowrap;
+    }
+
+    .tab-btn {
+        padding: 10px 12px;
+        font-size: 0.75rem;
+    }
+
+    .workout-display {
+        padding: 20px 15px;
+    }
+
+    .exercise-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .timer-display {
+        font-size: 2.5rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* PWA Install Banner */
+.install-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+.install-banner.show {
+    display: flex;
+}
+
+.install-banner button {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.message.success {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.message.error {
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid var(--danger-color);
+    color: var(--danger-color);
+}
