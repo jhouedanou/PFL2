@@ -1,0 +1,7 @@
+<svg width="192" height="192" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" fill="#4CAF50"/>
+  <circle cx="40" cy="96" r="20" fill="white"/>
+  <circle cx="152" cy="96" r="20" fill="white"/>
+  <rect x="60" y="86" width="72" height="20" fill="white"/>
+  <text x="96" y="140" font-size="24" fill="white" text-anchor="middle" font-family="Arial">PFL2</text>
+</svg>
